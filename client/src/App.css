@@ -48,54 +48,6 @@
   border-bottom-right-radius: 25px;
 }
 
-.FormCenter {
-  margin-bottom: 100px;
-}
-
-.FormTitle {
-  color: #707C8B;
-  font-weight: 300;
-  margin-bottom: 50px;
-}
-
-.FormField {
-  margin-bottom: 40px;
-}
-
-.FormLabel {
-  display: block;
-  text-transform: uppercase;
-  font-size: .9em;
-  color: white;
-}
-
-.FormInput {
-  width: 85%;
-  background-color: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 0px solid #445366;
-  font-size: 1em;
-  font-weight: 300;
-  padding-bottom: 10px;
-  margin-top: 10px;
-}
-
-.FormField__Input::placeholder {
-  color: rgb(134, 82, 33);
-}
-
-.FormButton {
-  background-color: #52C4B9;
-  color: white;
-  border: none;
-  outline: none;
-  border-radius: 25px;
-  padding: 15px 70px;
-  font-size: .8em;
-  font-weight: 500;
-}
-
 .FormField__CheckboxLabel {
   color: #646F7D;
   font-size: .9em;
