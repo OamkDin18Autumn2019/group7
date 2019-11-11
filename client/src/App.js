@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route,  NavLink } from 'react-router-dom';
 import './App.css';
 import RegisterView from './components/RegisterView.js';
+
 class App extends React.Component
 {
   constructor(props){
