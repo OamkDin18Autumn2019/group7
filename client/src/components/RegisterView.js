@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import styles from './Auth.module.css';
 class RegisterView extends React.Component {
   constructor(props)
   {
@@ -62,7 +63,9 @@ register = (event) =>
   render()
   {
     return(
-      <div>
+      <div className="App">
+      <div className="AppAside"></div>
+      <div className="AppForm">
       <h1>Register</h1>
       <div className={styles.FormCenter}>
                <form onSubmit={this.register} className={styles.FormFields}>
@@ -72,7 +75,7 @@ register = (event) =>
                    </div>
                    <div className={styles.FormField}>
                        <label className={styles.FormLabel} htmlFor="doB">DoB</label>
-                       <input type="text" id="doB" className={styles.FormInput} placeholder="Enter your DoB" name="doB" />
+                       <input type="date" id="doB" className={styles.FormInput} placeholder="Enter your DoB" name="doB" />
                    </div>
                    <div className={styles.FormField}>
                        <label className={styles.FormLabel} htmlFor="email">Email</label>
@@ -95,6 +98,7 @@ register = (event) =>
                        <button className={styles.FormButton}>Sign Up</button>
                    </div>
                </form>
+           </div>
            </div>
       </div>
     )
