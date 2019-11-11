@@ -13,8 +13,9 @@ class App extends React.Component
   {
     return(
     <Router>
-    <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
+         <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
     </Router>
+      
   )
   }
 }

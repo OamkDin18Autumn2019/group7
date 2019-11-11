@@ -60,6 +60,7 @@ register = (event) =>
         alert("Your account is created");
       }
   }
+
   render()
   {
     return(
@@ -103,5 +104,5 @@ register = (event) =>
       </div>
     )
   }
-  }
+}
   export default RegisterView;
