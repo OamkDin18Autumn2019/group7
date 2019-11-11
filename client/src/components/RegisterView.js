@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+import styles from './Auth.module.css';
 class RegisterView extends React.Component {
   constructor(props)
   {
@@ -59,9 +60,8 @@ register = (event) =>
         alert("Your account is created");
       }
   }
-  render()
-  {
-    return(
+  render() {
+    return (
       <div>
       <h1>Register</h1>
       <form onSubmit={this.register}>
@@ -90,5 +90,5 @@ register = (event) =>
       </div>
     )
   }
-  }
+}
   export default RegisterView;
