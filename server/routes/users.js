@@ -4,39 +4,29 @@ var users = require('../models/users');
 const passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 const saltRounds = 10;
+var cors = require('cors');
+router.use(cors());
 
-  /*  router.get('/:id?',  passport.authenticate('basic', { session: false }), function(req, res, next) {
+
+
+
+
+
+
+
+   router.get('/', function(req, res, next) {
+
+       users.get(function(err, rows) {
+         if (err) {
+           res.json(err);
+         } else {
+           res.json(rows);
+         }
+       });
+    });
+   router.get('/:id?',function(req, res, next) {
       if (req.params.id) {
         users.getById(req.params.id, function(err, rows) {
-          if (err) {
-            res.json(err);
-          } else {
-            res.json(rows);
-          }
-        });
-      } else {
-        users.get(function(err, rows) {
-          if (err) {
-            res.json(err);
-          } else {
-            res.json(rows);
-          }
-        });
-      }
-    }); */
-
-
-    router.get('/:id?', function(req, res, next) {
-      if (req.params.id) {
-        users.getById(req.params.id, function(err, rows) {
-          if (err) {
-            res.json(err);
-          } else {
-            res.json(rows);
-          }
-        });
-      } else {
-        users.get(function(err, rows) {
           if (err) {
             res.json(err);
           } else {
@@ -45,7 +35,6 @@ const saltRounds = 10;
         });
       }
     });
-
 
    router.post('/', function(req, res, next) {
     if((typeof req.body.username === "string") &&

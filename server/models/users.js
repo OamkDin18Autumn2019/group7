@@ -6,31 +6,12 @@ const saltRounds = 10;
 
 
 
-/*passport.use(new BasicStrategy((username, password, cb) => {
-    db.query('SELECT id, username, password FROM users WHERE username = ?', [username]).then(dbResults => {
-    if(dbResults.length == 0)
-    {
-      return cb(null, false);
-    }
-
-    bcrypt.compare(password, dbResults[0].password).then(bcryptResult => {
-      if(bcryptResult == true)
-      {
-        cb(null, dbResults[0]);
-      }
-      else
-      {
-        return cb(null, false);
-      }
-    })
-
-  }).catch(dbError => cb(err))
-}));*/
-
-
 
 
 var users = {
+  check: function(password, callback){
+    return bcrypt.compare(password, )
+  },
   get: function(callback) {
     return db.query('select id, username, name from users',  callback);
   },
