@@ -6,9 +6,8 @@ const saltRounds = 10;
 
 
 
-passport.use(new Strategy((username, password, cb) => {
-  db.query('SELECT id, username, password FROM users WHERE username = ?', [username]).then(dbResults => {
-
+/*passport.use(new BasicStrategy((username, password, cb) => {
+    db.query('SELECT id, username, password FROM users WHERE username = ?', [username]).then(dbResults => {
     if(dbResults.length == 0)
     {
       return cb(null, false);
@@ -26,17 +25,17 @@ passport.use(new Strategy((username, password, cb) => {
     })
 
   }).catch(dbError => cb(err))
-}));
+}));*/
 
 
 
 
 var users = {
-  get: function(id, username,name, callback) {
-    return db.query('select id, username from users', [id], [username],[name], callback);
+  get: function(callback) {
+    return db.query('select id, username, name from users',  callback);
   },
-  getById: function(id, username, name callback) {
-    return db.query('select id, username, name from users where id=?', [id],[username],[name], callback);
+  getById: function(id, callback) {
+    return db.query('select id, username, name from users where id=?', [id], callback);
   },
   add: function(users, callback) {
     return bcrypt.hash(users.password, saltRounds).then(hash =>
