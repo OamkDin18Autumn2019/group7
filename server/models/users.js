@@ -4,17 +4,31 @@ const passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 const saltRounds = 10;
 
+passport.use(new BasicStrategy((username, password, cb) => {
+  db.query('SELECT id, username, password FROM users WHERE username = ?', [username]).then(dbResults => {
 
+    if(dbResults.length == 0)
+    {
+      return cb(null, false);
+    }
 
+    bcrypt.compare(password, dbResults[0].password).then(bcryptResult => {
+      if(bcryptResult == true)
+      {
+        cb(null, dbResults[0]);
+      }
+      else
+      {
+        return cb(null, false);
+      }
+    })
 
-// Use the BasicStrategy within Passport.
-//   Strategies in Passport require a `verify` function, which accept
-//   credentials (in this case, a username and password), and invoke a callback
-//   with a user object.
-
+  }).catch(dbError => cb(err))
+}));
 
 
 var users = {
+
   get: function(callback) {
     return db.query('select id, username, name from users',  callback);
   },

@@ -9,9 +9,6 @@ var cors = require('cors');
 router.use(cors());
 
 
-
-
-
    router.get('/', function(req, res, next) {
 
        users.get(function(err, rows) {
@@ -52,7 +49,7 @@ router.use(cors());
     }
     });
 
-    
+
 
     router.delete('/:id', function(req, res, next) {
     users.delete(req.params.id, function(err, count) {

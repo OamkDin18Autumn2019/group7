@@ -1,11 +1,42 @@
-var mysql = require('mysql');
-const passport = require('passport');
-var BasicStrategy = require('passport-http').BasicStrategy;
-var connection = mysql.createPool({
-  host: 'localhost',
-  user: 'dinhtai41',
-  password: '!b15fc4be24263482874bf8bdb20e7a62D',
-  database: 'demo'
-});
 
-module.exports = connection;
+
+
+
+let mysql = require('mysql');
+let pool = null;
+try {
+  pool  = mysql.createPool({
+    connectionLimit : 10,
+    host            : 'localhost',
+    user            : 'dinhtai41',
+    password        : '!b15fc4be24263482874bf8bdb20e7a62D',
+    database        : 'demo'
+  });
+
+} catch (error) {
+  console.error('Mysql pool create failed');
+  console.error(error);
+}
+
+
+const api = {
+  query: (query, ...parameters) =>
+  {
+    let promise = new Promise(function(resolve, reject) {
+      pool.query(query, ...parameters, (error, results, fields) => {
+        if(error) {
+          reject(error)
+        };
+
+        resolve(results);
+      })
+    });
+
+    return promise;
+  },
+  closeAll: () => {
+    pool.end();
+  }
+};
+
+module.exports = api;
