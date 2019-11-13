@@ -1,14 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var users = require('../models/users');
+const bcrypt = require('bcryptjs');
 const passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 const saltRounds = 10;
 var cors = require('cors');
 router.use(cors());
-
-
-
 
 
 
@@ -24,7 +22,7 @@ router.use(cors());
          }
        });
     });
-   router.get('/:id?',function(req, res, next) {
+   router.get('/:id?', passport.authenticate('basic', { session: false }),function(req, res, next) {
       if (req.params.id) {
         users.getById(req.params.id, function(err, rows) {
           if (err) {
@@ -53,6 +51,8 @@ router.use(cors());
     res.sendStatus(400);
     }
     });
+
+    
 
     router.delete('/:id', function(req, res, next) {
     users.delete(req.params.id, function(err, count) {

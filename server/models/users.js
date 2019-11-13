@@ -7,11 +7,14 @@ const saltRounds = 10;
 
 
 
+// Use the BasicStrategy within Passport.
+//   Strategies in Passport require a `verify` function, which accept
+//   credentials (in this case, a username and password), and invoke a callback
+//   with a user object.
+
+
 
 var users = {
-  check: function(password, callback){
-    return bcrypt.compare(password, )
-  },
   get: function(callback) {
     return db.query('select id, username, name from users',  callback);
   },
@@ -21,7 +24,7 @@ var users = {
   add: function(users, callback) {
     return bcrypt.hash(users.password, saltRounds).then(hash =>
       db.query(
-        'INSERT INTO users (username, password, name, email, doB) VALUES (?,?,?,?,?)', [users.username, users.name, users.email, users.doB, hash],
+        'INSERT INTO users (username, name, email, doB, password) VALUES (?,?,?,?,?)', [users.username, users.name, users.email, users.doB, hash],
         callback
       )
     );
