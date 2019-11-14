@@ -6,7 +6,7 @@ const saltRounds = 10;
 
 
 
-passport.use(new Strategy((username, password, cb) => {
+passport.use(new BasicStrategy((username, password, cb) => {
   db.query('SELECT id, username, password FROM users WHERE username = ?', [username]).then(dbResults => {
 
     if(dbResults.length == 0)
@@ -33,9 +33,9 @@ passport.use(new Strategy((username, password, cb) => {
 
 var users = {
   get: function(id, username,name, callback) {
-    return db.query('select id, username from users', [id], [username],[name], callback);
+    return db.query('select id, username name from users', [id], [username],[name], callback);
   },
-  getById: function(id, username, name callback) {
+  getById: function(id, username, name, callback) {
     return db.query('select id, username, name from users where id=?', [id],[username],[name], callback);
   },
   add: function(users, callback) {

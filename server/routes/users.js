@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var users = require('../models/users');
-const passport = require('passport');
+/*const passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
-const saltRounds = 10;
+const saltRounds = 10;*/
 
-    router.get('/:id?',  passport.authenticate('basic', { session: false }), function(req, res, next) {
+    /*router.get('/:id?',  passport.authenticate('basic', { session: false }), function(req, res, next) {
       if (req.params.id) {
         users.getById(req.params.id, function(err, rows) {
           if (err) {
@@ -23,7 +23,7 @@ const saltRounds = 10;
           }
         });
       }
-    });
+    });*/
 
 
    router.post('/', function(req, res, next) {
