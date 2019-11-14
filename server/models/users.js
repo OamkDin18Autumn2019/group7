@@ -4,8 +4,11 @@ const passport = require('passport');
 var BasicStrategy = require('passport-http').BasicStrategy;
 const saltRounds = 10;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
 passport.use(new BasicStrategy((username, password, cb) => {
   db.query('SELECT id, username, password FROM users WHERE username = ?', [username]).then(dbResults => {
 
@@ -29,19 +32,26 @@ passport.use(new BasicStrategy((username, password, cb) => {
 }));
 
 
-
-
 var users = {
+<<<<<<< HEAD
   get: function(id, username,name, callback) {
     return db.query('select id, username name from users', [id], [username],[name], callback);
   },
   getById: function(id, username, name, callback) {
     return db.query('select id, username, name from users where id=?', [id],[username],[name], callback);
+=======
+
+  get: function(callback) {
+    return db.query('select id, username, name from users',  callback);
+  },
+  getById: function(id, callback) {
+    return db.query('select id, username, name from users where id=?', [id], callback);
+>>>>>>> master
   },
   add: function(users, callback) {
     return bcrypt.hash(users.password, saltRounds).then(hash =>
       db.query(
-        'INSERT INTO users (username, password, name, email, doB) VALUES (?,?,?,?,?)', [users.username, users.name, users.email, users.doB, hash],
+        'INSERT INTO users (username, name, email, doB, password) VALUES (?,?,?,?,?)', [users.username, users.name, users.email, users.doB, hash],
         callback
       )
     );
