@@ -7,16 +7,28 @@ class App extends React.Component
 {
   constructor(props){
     super(props);
-    this.state={}
+    this.state={isAuthenticated: false,
+                userInfo:null}
+  }
+  onLogin = (result) => {
+    this.setState({ isAuthenticated: true })
+    this.setState({ userInfo: result });
+    console.log(this.state.userInfo);
+  }
+
+  onLoginFail = () => {
+    this.setState({ isAuthenticated: false });
+    console.log("Login failed");
+    console.log(this.state.userInfo);
   }
   render()
   {
     return(
     <Router>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
-         <Route path="/login" exact render={ routeProps => <LoginView {...routeProps}/>}/>
+         <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
+                                                                      loginFail = { this.onLoginFail } {...routeProps}/> }/>
     </Router>
-      
   )
   }
 }

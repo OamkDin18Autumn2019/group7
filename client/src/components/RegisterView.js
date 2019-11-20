@@ -13,7 +13,7 @@ class RegisterView extends React.Component {
 componentDidMount = () =>
   {
     axios.get('http://localhost:4000' + '/users').then(result => {
-      this.setState({ userData: result.data.users });
+      this.setState({ userData: result.data });
     })
     .catch(error => {
       console.error(error);

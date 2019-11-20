@@ -10,7 +10,7 @@ export default function LoginView(props) {
     Auth.authenticate(event.target['username'].value, event.target['password'].value)
       .then(result =>
         {
-          props.loginSuccess();
+          props.loginSuccess(result);
           props.history.push(props.redirectPathOnSuccess);
         })
       .catch(() => {
@@ -41,7 +41,7 @@ export default function LoginView(props) {
           </div>
 
           <div className={styles.FormField}>
-              <button className={styles.FormButton} type="submit">Sign In</button> 
+              <button className={styles.FormButton} type="submit">Sign In</button>
           </div>
         </form>
         </div>
