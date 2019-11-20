@@ -8,16 +8,19 @@ class App extends React.Component
 {
   constructor(props){
     super(props);
-    this.state={isAuthenticated: false}
+    this.state={isAuthenticated: false,
+                userInfo:null}
   }
-  onLogin = () => {
+  onLogin = (result) => {
     this.setState({ isAuthenticated: true })
-    console.log('ok');
+    this.setState({ userInfo: result });
+    console.log(this.state.userInfo);
   }
 
   onLoginFail = () => {
     this.setState({ isAuthenticated: false });
     console.log("Login failed");
+    console.log(this.state.userInfo);
   }
   render()
   {
