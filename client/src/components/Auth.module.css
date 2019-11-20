@@ -62,3 +62,32 @@
     font-size: .8em;
     font-weight: 500;
   }
+
+  input[type="date"]::-webkit-clear-button {
+    display:none;
+  }
+
+  input[type="date"]::-webkit-inner-spin-button {
+    display:none;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color:#2e3c50;
+  }
+
+  input[type="date"] {
+    appearance: none;
+    -webkit-appearance: none;
+    color:#707C8B;
+    font-family: Arial, Helvetica, sans-serif;
+    padding:5px;
+    display:inline-block !important;
+    visibility: visible !important;
+  }
+
+  input[type="date"], focus{
+    color:#707C8B;
+    box-shadow: none;
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+  }
