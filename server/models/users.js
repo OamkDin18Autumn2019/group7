@@ -54,5 +54,9 @@ var users = {
       )
     );
   },
+  getByUsername: function(username, callback) {
+    return db.query('select id, username, name from users where username=?', [username], callback);
+  }
 };
+
 module.exports = users;

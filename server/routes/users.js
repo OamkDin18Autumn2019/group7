@@ -70,4 +70,15 @@ router.use(cors());
       }
       });
     });
+    router.get('/login/:username?', passport.authenticate('basic', { session: false }),function(req, res, next) {
+       if (req.params.username) {
+         users.getByUsername(req.params.username, function(err, rows) {
+           if (err) {
+             res.json(err);
+           } else {
+             res.json(rows);
+           }
+         });
+       }
+     });
   module.exports = router;

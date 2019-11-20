@@ -2,13 +2,13 @@ import axios from 'axios';
 
 let userInfo = {
   username: null,
-  password: null
+  password: null,
 }
 
 let myAuth = {
     authenticate: (username, password) => {
       return new Promise((resolve, reject) => {
-        axios.get('http://localhost:4000' + '/users/:id',
+        axios.get('http://localhost:4000' + '/users/login/'+ username,
           {
               auth: {
               username: username,
@@ -18,9 +18,9 @@ let myAuth = {
           .then(result => {
             userInfo = {
               username: username,
-              password: password
+              password: password,
             }
-            resolve();
+            resolve(result.data[0]);
           })
           .catch(error =>
             {
