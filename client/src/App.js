@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import logo from './2019-11-14.png';
+import logo1 from './ocsaigon.jpg' 
 
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
     
               <div class="topnav2">
           <ul>
-                  <img class="logo" src={"2019-11-14.png"} alt=''/>
+                  <img className="logo" src={logo} alt=''/>
           <li><a href="#">Rescipes</a>
            <ul>
             <li><a href="">Diet Menu</a></li>
@@ -50,50 +52,20 @@ function App() {
                           <div class="page__container">
                             <div class="photobox photobox_type1">
                               <div class="photobox__previewbox">
-                                <img src="am-thuc.jpg" class="photobox__preview" alt="Preview" />
-                                <span class="photobox__label">My favorites </span>
+                                <img src={logo1} class="photobox__preview" alt="Preview" />
+                                <div class="photobox__label">
+                               <h1>DevVNeseFoody</h1>
+                               <p>Variety of recipes and cooking-related articles with a focus on thoughtful and stylish living.
+                                  Many recipes have flavorful twists, and the site offers unique kitchenware for sale.</p>
+                               
+                              </div>
                               </div>
                             </div>
-                            <div class="photobox photobox_type2">
-                              <div class="photobox__previewbox">
-                                <img src="bun-bo-hue.jpg" class="photobox__preview" alt="Preview" />
-                                <span class="photobox__label">Beef Noodles</span>
-                              </div>
-                            </div>
-                            <div class="photobox photobox_type3">
-                              <div class="photobox__previewbox">
-                                <img src="banh-mi.jpg" class="photobox__preview" alt="Preview" />
-                                <span class="photobox__label">Banh Mi</span>
-                              </div>
-                            </div>
-                            <div class="photobox photobox_type4">
-                              <div class="photobox__previewbox">
-                                <img src="bun-thit-nuong.jpg" class="photobox__preview" alt="Preview" />
-                                <span class="photobox__label">Bun Thit Nuong</span>
-                              </div>
-                            </div>
-                            <div class="photobox photobox_type5">
-                              <div class="photobox__previewbox">
-                                <img src="che.jpg" class="photobox__preview" alt="Preview" />
-                                <span class="photobox__label">Sweet</span>
-                              </div>
-                            </div>
-                            <div class="photobox photobox_type6">
-                              <div class="photobox__previewbox">
-                                <img src="ocsaigon.jpg" class="photobox__preview" alt="Preview" />
-                                <span class="photobox__label">Sea food</span>
-                              </div>
-                            </div>
-                            <div class="photobox photobox_type7">
-                              <div class="photobox__previewbox">
-                                <img src="pho2.webp" class="photobox__preview" alt="Preview" />
-                                <span class="photobox__label">Pho</span>
-                              </div>
-                            </div>
+                           
                             
                           </div>  
                         </div>
-                      </div>     
+                      </div>      
     </div>
   );
 }
