@@ -1,7 +1,8 @@
 var express = require('express');
   var router = express.Router();
   var comments = require('../models/comments');
-
+  var cors = require('cors');
+  router.use(cors());
 
   router.get('/:id?', function(req, res, next) {
     if (req.params.id) {
