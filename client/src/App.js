@@ -1,73 +1,39 @@
-import React from 'react';
-import './App.css';
-import logo from './2019-11-14.png';
-import logo1 from './ocsaigon.jpg' 
+import React, {Component} from 'react'; 
 
-function App() {
-  return (
-    <div>
-      <div className="mainmenu" >
-  <div className="topnav">
-    <div className="home">
-      <a className="active" href="#home">Home</a>
-    </div>
-      <a >About</a>
-      <div className="container-1">
-
-
-        <input type="search" id="search" placeholder="Search..." />
-
-      </div>
-
-      <div className="login-container">
-          
-          <button type="submit">Log in</button>
-          <button type="submit">Register</button>     
-          </div>
-      </div>
-    </div>
+import ShoppingList from './components/ShoppingList';
+import Header from './components/Header' ;
+import MainPage from './components/MainPage';
+import { BrowserRouter as Router, Route } from 'react-router-dom'; 
+class App extends React.Component{ 
     
-              <div class="topnav2">
-          <ul>
-                  <img className="logo" src={logo} alt=''/>
-          <li><a href="#">Rescipes</a>
-           <ul>
-            <li><a href="">Diet Menu</a></li>
-            <li><a href="">Weight Menu</a></li>
-            <li><a href="">Everday Meals</a></li>
-           </ul>
-          </li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Contact</a>
-              <ul>
-               <li><a href="">Call</a></li>
-               <li><a href="">Emails</a></li>
-              </ul>
-             </li>
-          
-         </ul>
-        </div>
-        <div class="page">
-                        <div class="page__demo">
-                          <div class="page__container">
-                            <div class="photobox photobox_type1">
-                              <div class="photobox__previewbox">
-                                <img src={logo1} class="photobox__preview" alt="Preview" />
-                                <div class="photobox__label">
-                               <h1>DevVNeseFoody</h1>
-                               <p>Variety of recipes and cooking-related articles with a focus on thoughtful and stylish living.
-                                  Many recipes have flavorful twists, and the site offers unique kitchenware for sale.</p>
-                               
-                              </div>
-                              </div>
-                            </div>
-                           
-                            
-                          </div>  
-                        </div>
-                      </div>      
-    </div>
-  );
-}
-
-export default App;
+    constructor(props)
+    {
+      super(props);
+  
+      this.state = {
+        items: [
+          { id: 1, value: 'Milk', qty: 5, unit: 'ltr' },
+          { id: 2, value: 'Bananas', qty: 6, unit: 'pcs' },
+          { id: 3, value: 'Bread', qty: 3, unit: 'x' },
+          { id: 4, value: 'Eggs', qty: 16, unit: 'x' }
+        ]
+      };
+  
+    }
+     
+    render(){ 
+        return( 
+            <> 
+            <Router>
+            <Header />
+            <Route path="/" exact render={ routeProps => <ShoppingList items={this.state.items} {...routeProps}/>}  />   
+            </Router>
+         
+            
+            </> 
+        ) 
+    } 
+} 
+ 
+ 
+export default App; 
