@@ -1,6 +1,7 @@
 import React from 'react';
 import Auth from './Auth';
 import styles from './Auth.module.css';
+import { BrowserRouter as Router, Route,  NavLink } from 'react-router-dom';
 export default function LoginView(props) {
 
   function login(event)
@@ -22,6 +23,10 @@ export default function LoginView(props) {
     <div className="App">
     <div className="AppAside"></div>
     <div className="AppForm">
+    <div className="PageSwitcher">
+        <NavLink to="/login" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
+        <NavLink exact to="/register" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
+    </div>
     <h1>Sign In</h1>
     <div className={styles.FormCenter}>
         <form  className={styles.FormFields} onSubmit={login}>

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 let userInfo = {
   username: null,
-  password: null,
+  password: null
 }
 
 let myAuth = {

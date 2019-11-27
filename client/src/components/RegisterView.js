@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import styles from './Auth.module.css';
+import { BrowserRouter as Router, Route,  NavLink } from 'react-router-dom';
 class RegisterView extends React.Component {
   constructor(props)
   {
@@ -67,7 +68,11 @@ register = (event) =>
       <div className="App">
       <div className="AppAside"></div>
       <div className="AppForm">
-      <h1>Register</h1>
+      <div className="PageSwitcher">
+        <NavLink to="/login" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
+        <NavLink exact to="/register" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
+      </div>
+      <h1>Sign Up</h1>
       <div className={styles.FormCenter}>
                <form onSubmit={this.register} className={styles.FormFields}>
                    <div className={styles.FormField}>
@@ -100,6 +105,7 @@ register = (event) =>
                    </div>
                </form>
            </div>
+           
            </div>
       </div>
     )
