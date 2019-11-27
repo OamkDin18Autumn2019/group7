@@ -5,7 +5,8 @@ import RegisterView from './components/RegisterView.js';
 import LoginView from './components/LoginView.js';
 import PostList from './components/PostList';
 import Postdetail from './components/Postdetail';
-import Navbar from './components/Navbar';
+import Headers from './components/Header';
+import MainPage from './components/MainPage'
 class App extends React.Component
 {
   constructor(props){
@@ -28,11 +29,12 @@ class App extends React.Component
   {
     return(
     <Router>
-         <Route path="/" exact render={routeProps => <Navbar {...routeProps}/>}/>
+      <Headers />
+         <Route path="/" exact render={routeProps => <MainPage {...routeProps}/>}/>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
                                                                       loginFail = { this.onLoginFail } {...routeProps}/> }/>
-         <Route path="/" exact render={ routeProps => <PostList {...routeProps}/>}/>
+         <Route path="/list" exact render={ routeProps => <PostList {...routeProps}/>}/>
          <Route path="/post/:id" exact render={ routeProps => <Postdetail  userInfo={this.state.userInfo} {...routeProps}/>}/>
     </Router>
   )
