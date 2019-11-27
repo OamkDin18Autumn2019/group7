@@ -1,10 +1,9 @@
 var express = require('express');
   var router = express.Router();
   var post = require('../models/post');
-  
   var cors = require('cors');
   router.use(cors());
-  
+
   router.get('/:id?', function(req, res, next) {
     if (req.params.id) {
       post.getById(req.params.id, function(err, rows) {
