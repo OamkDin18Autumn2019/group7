@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route,  NavLink } from 'react-router-dom';
 import './App.css';
 import RegisterView from './components/RegisterView.js';
 import LoginView from './components/LoginView.js';
-import Post from './components/Post.js'
+import PostView from './components/PostView.js'
 
 class App extends React.Component
 {

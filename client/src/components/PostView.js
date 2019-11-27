@@ -43,9 +43,8 @@ class PostView extends React.Component {
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
       date : e.target['date'].value,
-      username: e.target['username'].value
     })
-      console.log(this.props.userInfo)
+
   }
   render() {
     return (
@@ -57,7 +56,7 @@ class PostView extends React.Component {
  <div className={styles.FormCenter}>
      <form  className={styles.FormFields} onSubmit={this.handleSubmit}>
      <div className={styles.FormField}>
-         <label className={styles.FormLabel} htmlFor="author">Author</label>
+         <label className={styles.FormLabel} htmlFor="name">Name</label>
          <input type="text" id="name" className={styles.FormInput} name="name" />
        </div>
 
@@ -78,16 +77,13 @@ class PostView extends React.Component {
 
        <div className={styles.FormField}>
          <label className={styles.FormLabel} htmlFor="image">Image</label>
-         <input type="file" id="image" className={styles.FormInput} name="image"  />
+         <input type="file" id="image" onChange={this.handleselectedFile} className={styles.FormInput} name="image"  />
        </div>
 
-       <div className={styles.FormField}>
-         <label className={styles.FormLabel} htmlFor="username">Username</label>
-         <input type="text" id="username" className={styles.FormInput} name="username"  />
-       </div>
+
 
        <div className={styles.FormField}>
-           <button className={styles.FormButton} type="submit">Submit</button>
+           <button className={styles.FormButton} type="submit" onClick={this.handleUpload}>Submit</button>
        </div>
      </form>
      </div>
