@@ -32,8 +32,8 @@ class App extends React.Component
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
                                                                       loginFail = { this.onLoginFail } {...routeProps}/> }/>
-         <Route path="/post" exact render={ routeProps => <PostList {...routeProps}/>}/>
-         <Route path="/post/:id" exact render={ routeProps => <Postdetail {...routeProps}/>}/>
+         <Route path="/" exact render={ routeProps => <PostList {...routeProps}/>}/>
+         <Route path="/post/:id" exact render={ routeProps => <Postdetail  userInfo={this.state.userInfo} {...routeProps}/>}/>
     </Router>
   )
   }

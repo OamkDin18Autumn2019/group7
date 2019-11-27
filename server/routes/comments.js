@@ -51,4 +51,13 @@ var express = require('express');
       }
     });
   });
+  router.get('/post/:id', function(req, res, next) {
+    comments.getByIdPost(req.params.id, function(err, rows) {
+      if (err) {
+        res.json(err);
+      } else {
+        res.json(rows);
+      }
+    });
+ });
   module.exports = router;
