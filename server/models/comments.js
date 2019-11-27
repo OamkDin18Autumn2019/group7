@@ -1,10 +1,13 @@
 var db = require('../database');
   var comments = {
     get: function(callback) {
-      return db.query('select comments.idcomments, comments.idpost, comments.iduser, comments.comment, users.username from comments inner join users on comments.iduser = users.id;', callback);
+      return db.query('select comments.idcomments, comments.idpost, comments.iduser, comments.comment, users.username from comments inner join users on comments.iduser = users.id order by comments.idcomments', callback);
     },
     getById: function(id, callback) {
-      return db.query('select comments.idcomments, comments.idpost, comments.iduser, comments.comment, users.username from comments inner join users on comments.iduser = users.id where idcomments=?', [id], callback);
+      return db.query('select comments.idcomments, comments.idpost, comments.iduser, comments.comment, users.username from comments inner join users on comments.iduser = users.id where idcomments=? order by comments.idcomments', [id], callback);
+    },
+    getByIdPost: function(id, callback) {
+      return db.query('select comments.idcomments, comments.idpost, comments.iduser, comments.comment, users.username from comments inner join users on comments.iduser = users.id where idpost=? order by comments.idcomments', [id], callback);
     },
     add: function(comments, callback) {
       return db.query(

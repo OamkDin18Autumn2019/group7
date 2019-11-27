@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Comments from './Comments.js';
 import AddComment from './AddComment.js';
-import styles from './PostView.module.css';
+//import styles from './PostView.module.css';
 
 export default class Postdetail extends Component {
   constructor(props) {
@@ -83,13 +83,14 @@ export default class Postdetail extends Component {
       return (
         <div className="blog">
           <div className="row">
+            <div>{this.state.post.name} by {this.state.post.username}</div>
             <div>{this.state.post.ingredients}</div>
             <div>{this.state.post.recipe}</div>
           </div>
-          <div className={styles.main1}>
+          <div>
         <Comments comments={this.state.comments}></Comments>
         </div>
-        <div className={styles.main1}>
+        <div>
         <AddComment userInfo={this.props.userInfo} post={this.state.post} submit = {this.onHandleSubmit} getComment={this.getComment} onHandleChange={this.onHandleChange}></AddComment>
         </div>
         </div>

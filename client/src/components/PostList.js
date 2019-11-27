@@ -22,7 +22,7 @@ export default class PostList extends Component {
     return (
       <div className="blog">
         <ul>
-        {this.state.post.map(post => <div key ={post.idposts}>{post.name}<br/><NavLink to={`post/${post.idposts}`}>More</NavLink></div>  )}
+        {this.state.post.map(post => <div key ={post.idposts}>{post.name} by {post.username}<br/><NavLink to={`post/${post.idposts}`}>More</NavLink></div>  )}
         </ul>
       </div>
     )
