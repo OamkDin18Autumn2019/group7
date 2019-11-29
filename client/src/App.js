@@ -36,7 +36,7 @@ class App extends React.Component
   {
     return(
     <Router>
-      <Headers search={this.updateSearch} updateSearch={this.updateSearch} />
+      <Headers search={this.state.updateSearch} updateSearch={this.updateSearch} />
          <Route path="/" exact render={routeProps => <MainPage {...routeProps}/>}/>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
