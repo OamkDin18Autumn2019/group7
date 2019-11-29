@@ -19,7 +19,7 @@ export default function Header(props){
             <div className="container-1">
 
 
-              <input type="search" id="search" placeholder="Search..." />
+              <input type="search" values={props.search} onChange={props.updateSearch} id="search" placeholder="Search..." />
 
             </div>
 

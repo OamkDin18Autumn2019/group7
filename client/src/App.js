@@ -12,7 +12,9 @@ class App extends React.Component
   constructor(props){
     super(props);
     this.state={isAuthenticated: false,
-                userInfo:null}
+                userInfo:null,
+                search:"",
+              }
   }
   onLogin = (result) => {
     this.setState({ isAuthenticated: true })
@@ -25,16 +27,20 @@ class App extends React.Component
     console.log("Login failed");
     console.log(this.state.userInfo);
   }
+  updateSearch = (event) =>{
+    this.setState({search: event.target.value.substr(0,20)});
+    console.log(this.state.search)
+  }
   render()
   {
     return(
     <Router>
-      <Headers />
+      <Headers search={this.updateSearch} updateSearch={this.updateSearch} />
          <Route path="/" exact render={routeProps => <MainPage {...routeProps}/>}/>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
                                                                       loginFail = { this.onLoginFail } {...routeProps}/> }/>
-         <Route path="/list" exact render={ routeProps => <PostList {...routeProps}/>}/>
+         <Route path="/list" exact render={ routeProps => <PostList search={this.state.search} {...routeProps}/>}/>
          <Route path="/post/:id" exact render={ routeProps => <Postdetail  userInfo={this.state.userInfo} {...routeProps}/>}/>
     </Router>
   )
