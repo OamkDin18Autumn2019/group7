@@ -42,7 +42,6 @@ class AddView extends React.Component {
       name : e.target['name'].value,
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
-      date : e.target['date'].value,
     })
 
   }
