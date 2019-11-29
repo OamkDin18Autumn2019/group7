@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 export default class PostList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      post:[]
+      post: []
     };
   }
 
   componentDidMount = () => {
     axios.get("http://localhost:4000" + "/post")
-    .then(res => {
-      console.log(res.data);
-      this.setState({post:res.data});
-    })
-    .catch(error => console.log(error));
+      .then(res => {
+        console.log(res.data);
+        this.setState({ post: res.data });
+      })
+      .catch(error => console.log(error));
   }
 
   render() {
+
     return (
       <div className="blog">
         <ul>
-        {this.state.post.map(post => <div key ={post.idposts}>{post.name} by {post.username}<br/><NavLink to={`post/${post.idposts}`}>More</NavLink></div>  )}
+          {this.state.post.filter(i => i.name.toLowerCase().indexOf(this.props.search.toLowerCase()) !== -1
+          ).map(post => <div key={post.idposts}>{post.name} by {post.username}<br /><NavLink to={`post/${post.idposts}`}>More</NavLink></div>)}
         </ul>
       </div>
     )
