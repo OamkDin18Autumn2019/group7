@@ -6,7 +6,8 @@ import LoginView from './components/LoginView.js';
 import PostList from './components/PostList';
 import Postdetail from './components/Postdetail';
 import Headers from './components/Header';
-import MainPage from './components/MainPage'
+import MainPage from './components/MainPage';
+import AddView from './components/AddView';
 class App extends React.Component
 {
   constructor(props){
@@ -35,13 +36,14 @@ class App extends React.Component
   {
     return(
     <Router>
-      <Headers search={this.updateSearch} updateSearch={this.updateSearch} />
+      <Headers search={this.state.updateSearch} updateSearch={this.updateSearch} />
          <Route path="/" exact render={routeProps => <MainPage {...routeProps}/>}/>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
                                                                       loginFail = { this.onLoginFail } {...routeProps}/> }/>
          <Route path="/list" exact render={ routeProps => <PostList search={this.state.search} {...routeProps}/>}/>
          <Route path="/post/:id" exact render={ routeProps => <Postdetail  userInfo={this.state.userInfo} {...routeProps}/>}/>
+         <Route path="/post" exact render={routeProps => <AddView userInfo={this.state.userInfo} {...routeProps}/>}/>
     </Router>
   )
   }
