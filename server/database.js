@@ -1,16 +1,12 @@
-
-
-
-
 let mysql = require('mysql');
 let pool = null;
 try {
   pool  = mysql.createPool({
     connectionLimit : 10,
     host            : 'localhost',
-    user            : 'dinhtai41',
-    password        : '!b15fc4be24263482874bf8bdb20e7a62D',
-    database        : 'demo'
+    user            : 'netuser',
+    password        : 'netpass',
+    database        : 'blog'
   });
 
 } catch (error) {
