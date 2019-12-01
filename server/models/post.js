@@ -8,7 +8,7 @@ var db = require('../database');
     },
     add: function(post, callback) {
       return db.query(
-          'INSERT INTO post (idusers, name, image, ingredients, recipe, date) VALUES (?,?,?,?,?,?)', [post.idusers, post.name, post.image, post.ingredients, post.recipe, post.date],
+          'INSERT INTO post (idusers, name, image, ingredients, recipe) VALUES (?,?,?,?,?)', [post.idusers, post.name, post.image, post.ingredients, post.recipe],
             callback
           )
     },
