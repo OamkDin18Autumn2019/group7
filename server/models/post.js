@@ -6,6 +6,9 @@ var db = require('../database');
     getById: function(id, callback) {
       return db.query('select post.idposts, post.name, post.idusers, post.image, post.ingredients, post.recipe, post.date, users.username from post inner join users on post.idusers = users.id where idposts=?', [id], callback);
     },
+    getByIdUser: function(id, callback) {
+      return db.query('select post.idposts, post.name, post.idusers, post.image, post.ingredients, post.recipe, post.date, users.username from post inner join users on post.idusers = users.id where idusers=?', [id], callback);
+    },
     add: function(post, callback) {
       return db.query(
           'INSERT INTO post (idusers, name, image, ingredients, recipe) VALUES (?,?,?,?,?)', [post.idusers, post.name, post.image, post.ingredients, post.recipe],

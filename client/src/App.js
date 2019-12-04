@@ -8,6 +8,7 @@ import Postdetail from './components/Postdetail';
 import Headers from './components/Header';
 import MainPage from './components/MainPage';
 import AddView from './components/AddView';
+import UserPost from './components/UserPost';
 class App extends React.Component
 {
   constructor(props){
@@ -40,10 +41,12 @@ class App extends React.Component
          <Route path="/" exact render={routeProps => <MainPage {...routeProps}/>}/>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
-                                                                      loginFail = { this.onLoginFail } {...routeProps}/> }/>
+                                                                      loginFail = { this.onLoginFail }
+                                                                      redirectPathOnSuccess="/" {...routeProps}/> }/>
          <Route path="/list" exact render={ routeProps => <PostList search={this.state.search} {...routeProps}/>}/>
          <Route path="/post/:id" exact render={ routeProps => <Postdetail  userInfo={this.state.userInfo} {...routeProps}/>}/>
          <Route path="/post" exact render={routeProps => <AddView userInfo={this.state.userInfo} {...routeProps}/>}/>
+         <Route path="/user" exact render={ routeProps => <UserPost userInfo={this.state.userInfo} {...routeProps}/>}/>
     </Router>
   )
   }
