@@ -32,11 +32,17 @@ class App extends React.Component
     this.setState({search: event.target.value.substr(0,20)});
     console.log(this.state.search)
   }
+
+  onLogOut= (event) => {
+    
+    this.setState({ userInfo: null});
+    console.log("logout")
+  }
   render()
   {
     return(
     <Router>
-      <Headers search={this.state.updateSearch} updateSearch={this.updateSearch} />
+    <Headers search={this.state.updateSearch} updateSearch={this.updateSearch} onLogout={this.onLogOut} userInfo={this.state.userInfo} />
          <Route path="/" exact render={routeProps => <MainPage {...routeProps}/>}/>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
