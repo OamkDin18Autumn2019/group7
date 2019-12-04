@@ -5,7 +5,7 @@ import RegisterView from './components/RegisterView.js';
 import LoginView from './components/LoginView.js';
 import PostList from './components/PostList';
 import Postdetail from './components/Postdetail';
-import Headers from './components/Header';
+import Header from './components/Header';
 import MainPage from './components/MainPage';
 import AddView from './components/AddView';
 class App extends React.Component
@@ -34,15 +34,15 @@ class App extends React.Component
   }
 
   onLogOut= (event) => {
-    
+    this.setState({isAuthenticated: false})
     this.setState({ userInfo: null});
     console.log("logout")
   }
   render()
-  {
+  {   
     return(
     <Router>
-    <Headers search={this.state.updateSearch} updateSearch={this.updateSearch} onLogOut={this.onLogOut} userInfo={this.state.userInfo} />
+    <Header search={this.state.updateSearch} updateSearch={this.updateSearch} onLogOut={this.onLogOut} userInfo={this.state.userInfo} />
          <Route path="/" exact render={routeProps => <MainPage {...routeProps}/>}/>
          <Route path="/register" exact render={ routeProps => <RegisterView {...routeProps}/> }/>
          <Route path="/login" exact render={ routeProps => <LoginView loginSuccess = { this.onLogin }
