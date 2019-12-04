@@ -35,6 +35,9 @@ class AddView extends React.Component {
       })
   }
  handleSubmit = e => {
+   if(this.props.userInfo == null){
+     alert("Must be login first")
+   }else{
     e.preventDefault();
     axios.post('http://localhost:4000/post/', {
       idusers: this.props.userInfo.id,
@@ -43,6 +46,8 @@ class AddView extends React.Component {
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
     })
+   }
+
 
   }
   render() {
