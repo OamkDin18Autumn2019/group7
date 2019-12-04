@@ -11,6 +11,9 @@
     white-space: normal;
     word-break: break-word;
     margin-bottom:5px;
-    padding-left: 20px;
-    float: left;
+    padding-left: 10px;
+}
+.addcom {
+    box-sizing: border-box;
+    padding-left:20px;
 }
