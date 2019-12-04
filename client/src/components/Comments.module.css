@@ -11,5 +11,6 @@
     white-space: normal;
     word-break: break-word;
     margin-bottom:5px;
-    padding-left: 10px;
+    padding-left: 20px;
+    float: left;
 }

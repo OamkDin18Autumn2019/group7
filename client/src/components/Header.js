@@ -31,7 +31,7 @@ export default function Header(props){
             </div>
           </div>
 
-                    <div class="topnav2">
+                    <div className="topnav2">
                 <ul>
                         <img className="logo" src={require('../header.png')} alt=''/>
                 <li><a href="#">Rescipes</a>
