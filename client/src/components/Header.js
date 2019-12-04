@@ -35,8 +35,10 @@ export default class Header extends React.Component {
                 </div>
             </div>
           </div>
-  
-                    <div class="topnav2">
+
+
+                    <div className="topnav2">
+
                 <ul>
                         <img className="logo" src={require('../header.png')} alt=''/>
                 <li><a href="#">Recipe</a>

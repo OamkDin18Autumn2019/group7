@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
+import styles from './Postlist.module.css';
 export default class PostList extends Component {
   constructor(props) {
     super(props);
@@ -21,11 +22,9 @@ export default class PostList extends Component {
   render() {
 
     return (
-      <div className="blog">
-        <ul>
+      <div className={styles.card}>
           {this.state.post.filter(i => i.name.toLowerCase().indexOf(this.props.search.toLowerCase()) !== -1
-          ).map(post => <div key={post.idposts}>{post.name} by {post.username}<br /><NavLink to={`post/${post.idposts}`}>More</NavLink></div>)}
-        </ul>
+          ).map(post => <div className={styles.row}><NavLink to={`post/${post.idposts}`}><div key={post.idposts}><img className={styles.img} src={window.location.origin + '/files/' + post.image}></img></div>{post.name}</NavLink></div>)}
       </div>
     )
   }

@@ -5,7 +5,7 @@ export default function AddComment(props) {
         props.onHandleChange(event.target.value);
     }
     return (
-        <div>
+        <div className={styles.addcom} >
             <h2>Add Comment</h2>
 
             <textarea className={styles.input} onChange={update} type='text' placeholder="Comment" name='comment' id='comment' value={props.input}></textarea>

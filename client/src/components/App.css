@@ -1,5 +1,4 @@
 
-* {box-sizing: border-box;}
 
 
 body {
@@ -232,7 +231,7 @@ margin-left: 20px;
  {
    background-color: white;
    height:50px;
-   margin-left:-1150px;
+   margin-left:0px;
    margin-top:0px;
    width: 250px
 ;
@@ -250,7 +249,7 @@ margin-left: 20px;
    margin-top: 1px;
  }
  ul li {
-  float: left;
+  float: right;
   width: 110px;
   /*height: 70px;*/
   line-height: 40px;
@@ -307,7 +306,7 @@ margin-left: 20px;
  {
    width:100%;
  
-  margin-left: 750px;
+  margin-left: 0px;
   text-decoration: none;
   margin-top: 0px;
  }
