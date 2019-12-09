@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import styles from './Auth.module.css'
 import axios from 'axios'
-
+import { Redirect, Route } from "react-router-dom";
 
 
 
@@ -27,9 +27,7 @@ class AddView extends React.Component {
      method: 'POST',
      body: data
    })
-   if(this.props.userInfo == null){
-     alert("Must be login first")
-   }else{
+    {
     e.preventDefault();
     axios.post('http://localhost:4000/post/', {
       idusers: this.props.userInfo.id,
@@ -38,49 +36,56 @@ class AddView extends React.Component {
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
     })
-   }
+    }
 
 
   }
-  render() {
-    		console.log(this.state.imageURL)
-    return (
+  render(){
+  if(this.props.userInfo == null){
+    alert("Must be login first")
+       return(<Redirect to='/' />)
+  } else {
+    {
+          console.log(this.state.imageURL)
+      return (
 
 
- <div >
-     <form   onSubmit={this.handleSubmit}>
-     <div >
-         <label>Name</label>
-         <input type="text" id="name" name="name" />
-       </div>
-
+   <div >
+       <form   onSubmit={this.handleSubmit}>
        <div >
-         <label>Ingredients</label>
-         <textarea rows="10" type="text" id="ingredients" name="ingredients"  />
-       </div>
+           <label>Name</label>
+           <input type="text" id="name" name="name" />
+         </div>
 
-       <div>
-         <label>Recipe</label>
-         <textarea rows="10" type="text" id="recipe"  name="recipe"  />
-       </div>
+         <div >
+           <label>Ingredients</label>
+           <textarea rows="10" type="text" id="ingredients" name="ingredients"  />
+         </div>
 
-       <div>
-         <label>Image</label>
-         <input type="file" id="image"
-         ref={ref => {
-								this.uploadInput = ref;
-							}}
-          name="image"  />
-       </div>
+         <div>
+           <label>Recipe</label>
+           <textarea rows="10" type="text" id="recipe"  name="recipe"  />
+         </div>
+
+         <div>
+           <label>Image</label>
+           <input type="file" id="image"
+           ref={ref => {
+                  this.uploadInput = ref;
+                }}
+            name="image"  />
+         </div>
 
 
-       <div>
-           <button type="submit">Submit</button>
-       </div>
-     </form>
-</div>
-    )
+         <div>
+             <button type="submit">Submit</button>
+         </div>
+       </form>
+  </div>
+      )
+    }
   }
+}
 }
 
 export default AddView
