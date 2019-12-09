@@ -13,7 +13,6 @@ class AddView extends React.Component {
 		this.state = {
 		};
 
-		/*this.handleUploadImage = this.handleUploadImage.bind(this);*/
 	}
 
 
@@ -85,19 +84,3 @@ class AddView extends React.Component {
 }
 
 export default AddView
-
-
-
-
-/*  handleUpload = (ev) => {
-    ev.preventDefault();
-
-  const data = new FormData();
-  data.append('file', this.uploadInput.files[0]);
-  data.append('filename', this.uploadInput.files[0].name);
-
-  fetch('http://localhost:4000/upload', {
-    method: 'POST',
-    body: data
-    })
-  } */
