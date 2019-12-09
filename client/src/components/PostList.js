@@ -24,7 +24,7 @@ export default class PostList extends Component {
     return (
       <div className={styles.card}>
           {this.state.post.filter(i => i.name.toLowerCase().indexOf(this.props.search.toLowerCase()) !== -1
-          ).map(post => <div className={styles.row}><NavLink to={`post/${post.idposts}`}><div key={post.idposts}><img className={styles.img} src={window.location.origin + '/files/' + post.image}></img></div>{post.name}</NavLink></div>)}
+          ).map(post => <div className={styles.row}><NavLink to={`post/${post.idposts}`}><div key={post.idposts}><img className={styles.img} src={post.image}></img></div>{post.name}</NavLink></div>)}
       </div>
     )
   }

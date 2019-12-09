@@ -4,44 +4,37 @@ import axios from 'axios'
 
 
 
-const endpoint = 'http://localhost:5000/upload/'
+
 
 class AddView extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      selectedFile: null,
-      loaded: 0,
-      data:[],
-    }
-  }
+		super(props);
+
+		this.state = {
+		};
+
+		/*this.handleUploadImage = this.handleUploadImage.bind(this);*/
+	}
 
 
-
- handleselectedFile = event => {
-    this.setState({
-      selectedFile: event.target.files[0],
-    })
-
-  }
-  handleUpload = () => {
-    const data = new FormData()
-    data.append('image', this.state.selectedFile, this.state.selectedFile.name)
-
-    axios
-      .post(endpoint, data)
-      .then(res => {
-        console.log(res.statusText)
-      })
-  }
  handleSubmit = e => {
+   e.preventDefault();
+
+   const data = new FormData();
+   data.append('file', this.uploadInput.files[0]);
+   data.append('filename', this.uploadInput.files[0].name);
+
+   fetch('http://localhost:4000/upload', {
+     method: 'POST',
+     body: data
+   })
    if(this.props.userInfo == null){
      alert("Must be login first")
    }else{
     e.preventDefault();
     axios.post('http://localhost:4000/post/', {
       idusers: this.props.userInfo.id,
-      image: e.target['image'].files[0].name,
+      image: 'http://localhost:4000/public/' + e.target['image'].files[0].name,
       name : e.target['name'].value,
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
@@ -51,6 +44,7 @@ class AddView extends React.Component {
 
   }
   render() {
+    		console.log(this.state.imageURL)
     return (
 
 
@@ -73,13 +67,16 @@ class AddView extends React.Component {
 
        <div>
          <label>Image</label>
-         <input type="file" id="image" onChange={this.handleselectedFile} name="image"  />
+         <input type="file" id="image"
+         ref={ref => {
+								this.uploadInput = ref;
+							}}
+          name="image"  />
        </div>
 
 
-
        <div>
-           <button type="submit" onClick={this.handleUpload}>Submit</button>
+           <button type="submit">Submit</button>
        </div>
      </form>
 </div>
@@ -88,3 +85,19 @@ class AddView extends React.Component {
 }
 
 export default AddView
+
+
+
+
+/*  handleUpload = (ev) => {
+    ev.preventDefault();
+
+  const data = new FormData();
+  data.append('file', this.uploadInput.files[0]);
+  data.append('filename', this.uploadInput.files[0].name);
+
+  fetch('http://localhost:4000/upload', {
+    method: 'POST',
+    body: data
+    })
+  } */
