@@ -31,7 +31,7 @@ class AddView extends React.Component {
     e.preventDefault();
     axios.post('http://localhost:4000/post/', {
       idusers: this.props.userInfo.id,
-      image: 'http://localhost:4000/public/' + e.target['image'].files[0].name,
+      image: e.target['image'].files[0].name,
       name : e.target['name'].value,
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
