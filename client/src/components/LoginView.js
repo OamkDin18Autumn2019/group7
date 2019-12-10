@@ -20,9 +20,9 @@ export default function LoginView(props) {
   }
 
   return (
-    <div className="App">
-    <div className="AppAside"></div>
-    <div className="AppForm">
+    <div className={styles.App}>
+    <div className={styles.AppAside}></div>
+    <div className={styles.AppForm}>
     <div className="PageSwitcher">
         <NavLink to="/login" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
         <NavLink exact to="/register" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>

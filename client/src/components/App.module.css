@@ -1,6 +1,3 @@
-
-
-
 body {
   margin-left: 10%;
    margin: 0;
@@ -27,16 +24,15 @@ body {
   display: block;
   color: white;
   text-align: center;
-  padding: 16px 17px;
+  padding: 15px 16px;
   text-decoration: none;
   font-size: 15px;
   width: 100px;
-  margin-top: 20px;
+  margin-top: 8px;
  
 }
 
 .topnav a:hover {
-  background-color: RGB(181,181,110);
   color:white;
   height: 40px;
   text-align: center;
@@ -44,10 +40,7 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
- 
- 
-   
-    -webkit-transition: background .55s ease;
+  -webkit-transition: background .55s ease;
   -moz-transition: background .55s ease;
   -ms-transition: background .55s ease;
   -o-transition: background .55s ease;
@@ -57,13 +50,13 @@ body {
 .topnav  {
   background-color: black;
   color: white;
-  height: 90px;
+  height: 70px;
   text-align: center;
   width:100%;
   
 }
 
-.topnav .login-container {
+.topnav .login {
   float: right;
   height:30px;
 }
@@ -78,7 +71,7 @@ body {
   margin-top: 30px;
 }
 
-.topnav .login-container button {
+.topnav .login button {
   float: right;
   /*padding: 6px 10px;*/
   margin-top: 8px;
@@ -97,9 +90,7 @@ body {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
- 
-   
-    -webkit-transition: background .55s ease;
+  -webkit-transition: background .55s ease;
   -moz-transition: background .55s ease;
   -ms-transition: background .55s ease;
   -o-transition: background .55s ease;
@@ -108,7 +99,7 @@ body {
   
 }
 
-.topnav .login-container button:hover {
+.topnav .login button:hover {
   background-color:RGB(181,181,110);
   height:30px;
 }
@@ -126,10 +117,10 @@ body {
   }
 }
 @media screen and (max-width: 100%) {
-  .topnav .login-container {
+  .topnav .login {
     float: none;
   }
-  .topnav a, .topnav, .topnav .login-container button {
+  .topnav a, .topnav, .topnav .login button {
     float: none;
     display: block;
     text-align: left;
@@ -143,7 +134,7 @@ body {
     height:30px;
   }
 }
-.container-1 .icon{
+.container .icon{
   position: absolute;
   top: 50%;
   margin-left: 17px;
@@ -152,8 +143,8 @@ body {
   color: white;
 }
 /*Start search*/
-  .container-1{
-    padding: 10px;
+  .container{
+    padding: 0px;
     float: left;
     margin-right: 10px;
     width: 220px;
@@ -162,7 +153,7 @@ body {
     position: relative;
     margin-top: 0px;
   }
-  .container-1 input#search{
+  .container input.search{
     width: 300px;
     height: 50px;
     background: #555;
@@ -175,22 +166,22 @@ body {
     -moz-border-radius: 5px;
     border-radius: 5px;
   }
-  .container-1 input#search::-webkit-input-placeholder {
+  .container input.search::-webkit-input-placeholder {
     color:black;
  }
   
- .container-1 input#search:-moz-placeholder { /* Firefox 18- */
+ .container input.search:-moz-placeholder { /* Firefox 18- */
     color: #333;  
  }
   
- .container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+ .container input.search::-moz-placeholder {  /* Firefox 19+ */
     color: #333;  
  }
   
- .container-1 input#search:-ms-input-placeholder {  
+ .container input.search:-ms-input-placeholder {  
     color: #333;  
  }
- .container-1 .icon{
+ .container .icon{
   position: absolute;
   top: 50%;
   margin-left: 17px;
@@ -199,12 +190,12 @@ body {
   color: black;
   height:10px;
 }
-.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+.container input.search:hover, .container input.search:focus, .container input.search:active{
   outline:none;
   background: #ffffff;
 }
-.container-1 input#search{
-  width: 300px;
+.container input.search{
+  width: 400px;
   height: 35px;
   background:rgb(204, 204, 204);
   border: none;
@@ -213,13 +204,13 @@ body {
   color: #262626;
   margin-top: 15px;
   padding-left: 45px;
-margin-left: 20px;
+  margin-left:150px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
  
    
-    -webkit-transition: background .55s ease;
+  -webkit-transition: background .55s ease;
   -moz-transition: background .55s ease;
   -ms-transition: background .55s ease;
   -o-transition: background .55s ease;
@@ -230,10 +221,12 @@ margin-left: 20px;
  .logo
  {
    background-color: white;
-   height:50px;
+   height:35px;
    margin-left:0px;
    margin-top:0px;
-   width: 250px
+   width: 150px;
+   padding-bottom: 10px;
+   padding-top:10px;
 ;
  }
  
@@ -268,7 +261,7 @@ margin-left: 20px;
   display: block;
 
    
-    -webkit-transition: background .55s ease;
+  -webkit-transition: background .55s ease;
   -moz-transition: background .55s ease;
   -ms-transition: background .55s ease;
   -o-transition: background .55s ease;
@@ -286,7 +279,7 @@ margin-left: 20px;
   */
  
    
-    -webkit-transition: background .55s ease;
+  -webkit-transition: background .55s ease;
   -moz-transition: background .55s ease;
   -ms-transition: background .55s ease;
   -o-transition: background .55s ease;
@@ -305,7 +298,6 @@ margin-left: 20px;
  .topnav2
  {
    width:100%;
- 
   margin-left: 0px;
   text-decoration: none;
   margin-top: 0px;
@@ -483,7 +475,7 @@ margin-left: 20px;
   width: 100%;
   height: 100%;
   
-  background-color: var(--photoboxOverlay, rgba(0, 0, 0, .7));
+  background-color: var(--photoboxOverlay, rgba(0, 0, 0, 0));
   opacity: 0;
   transition: opacity var(--photoboxAnimationDuration, .4s) cubic-bezier(0.71, 0.05, 0.29, 0.9);
   will-change: opacity;
@@ -507,10 +499,11 @@ margin-left: 20px;
   will-change: opacity, transform;
   
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, 200%);
   z-index: 2;
+  color:white;
 }
 
 .photobox_type1:hover .photobox__label{
@@ -725,7 +718,6 @@ body{
   margin: 0;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;   
-  
   min-height: 100vh;
   display: flex;
   flex-direction: column;  
@@ -737,7 +729,7 @@ a{
 }
 
 a:hover, a:focus{
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .page{
@@ -753,12 +745,15 @@ a:hover, a:focus{
   width: 100%;
 }
 
+.h1 {
+  color:white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight:400;
+  letter-spacing: 2px;
+  line-height: 1;
+}
 
-/*
-=====
-LinkedIn
-=====
-*/
-
-
+.p {
+  margin-top:-15px;
+}
  
