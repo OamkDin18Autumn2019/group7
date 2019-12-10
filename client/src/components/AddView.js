@@ -1,38 +1,31 @@
+
 import React, { Component } from 'react';
 import axios from 'axios';
 import styles from './AddView.module.css';
 import { Redirect, Route } from "react-router-dom";
-const endpoint = 'http://localhost:5000/upload/'
 
 class AddView extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = {
-      selectedFile: null,
-      loaded: 0,
-      data:[],
-    }
-  }
+		super(props);
+
+		this.state = {
+		};
+
+	}
 
 
-
- handleselectedFile = event => {
-    this.setState({
-      selectedFile: event.target.files[0],
-    })
-
-  }
-  handleUpload = () => {
-    const data = new FormData()
-    data.append('image', this.state.selectedFile, this.state.selectedFile.name)
-
-    axios
-      .post(endpoint, data)
-      .then(res => {
-        console.log(res.statusText)
-      })
-  }
  handleSubmit = e => {
+   e.preventDefault();
+
+   const data = new FormData();
+   data.append('file', this.uploadInput.files[0]);
+   data.append('filename', this.uploadInput.files[0].name);
+
+   fetch('http://localhost:4000/upload', {
+     method: 'POST',
+     body: data
+   })
+    {
     e.preventDefault();
     axios.post('http://localhost:4000/post/', {
       idusers: this.props.userInfo.id,
@@ -41,6 +34,7 @@ class AddView extends React.Component {
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
     })
+    }
 
   }
   render() {
@@ -70,4 +64,5 @@ class AddView extends React.Component {
     }
   }
 }
+
 export default AddView
