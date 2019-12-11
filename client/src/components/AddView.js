@@ -1,10 +1,8 @@
-import React, { Component } from 'react'
-import styles from './Auth.module.css'
-import axios from 'axios'
+
+import React, { Component } from 'react';
+import axios from 'axios';
+import styles from './AddView.module.css';
 import { Redirect, Route } from "react-router-dom";
-
-
-
 
 class AddView extends React.Component {
   constructor(props) {
@@ -38,54 +36,33 @@ class AddView extends React.Component {
     })
     }
 
-
   }
-  render(){
-  if(this.props.userInfo == null){
-    alert("Must be login first")
-       return(<Redirect to='/' />)
-  } else {
-    {
-          console.log(this.state.imageURL)
-      return (
-
-
-   <div >
-       <form   onSubmit={this.handleSubmit}>
-       <div >
-           <label>Name</label>
-           <input type="text" id="name" name="name" />
-         </div>
-
-         <div >
-           <label>Ingredients</label>
-           <textarea rows="10" type="text" id="ingredients" name="ingredients"  />
-         </div>
-
-         <div>
-           <label>Recipe</label>
-           <textarea rows="10" type="text" id="recipe"  name="recipe"  />
-         </div>
-
-         <div>
-           <label>Image</label>
-           <input type="file" id="image"
-           ref={ref => {
-                  this.uploadInput = ref;
-                }}
-            name="image"  />
-         </div>
-
-
-         <div>
-             <button type="submit">Submit</button>
-         </div>
-       </form>
-  </div>
-      )
+  render() {
+    const mystyle = {
+      overflow: "hidden", display:"inline-block"  , resize: "none", height: "160px" 
+    };
+    if(this.props.userInfo == null){
+      alert("Must be login first")
+         return(<Redirect to='/' />)
+    } else {
+        {
+            console.log(this.state.imageURL)
+            return (
+              <div className={styles.View}>
+              <div className={styles.wrapper}>
+                <form className={styles.paper} method="get" action="" onSubmit={this.handleSubmit}>
+                  <div className={styles.margin} > <input placeholder="Name" className={styles.name} type="text" name="name"></input></div>
+                  <textarea placeholder="Enter Ingredients" className={styles.text} name="ingredients" rows="4" style={mystyle}></textarea>
+                  <textarea placeholder="Enter Recipe" className={styles.text} name="recipe" rows="4" style={mystyle}></textarea>
+                  <div className={styles.margin} placeholder="Image"> <input className={styles.text} type="file" id="image" ref={ref => {this.uploadInput = ref;}} name="image"></input></div>
+                  <div><button className={styles.button} type="submit" >Submit</button></div>
+                </form>
+              </div>
+              </div>
+            )
+        }
     }
   }
-}
 }
 
 export default AddView
