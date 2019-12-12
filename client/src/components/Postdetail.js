@@ -84,17 +84,15 @@ export default class Postdetail extends Component {
       return (
         <div className={styles.blog}>
           <div className={styles.row}>
-            <div className={styles.leftcolumn}>
               <div className={styles.card}>
                 <h2>{this.state.post.name}</h2>
                 <h5>{this.state.post.username}</h5>
-                <img src={'http://localhost:4000/' + this.state.post.image}></img>
+                <img className={styles.img} src={'http://localhost:4000/' + this.state.post.image}></img>
                 <h4>INGREDIENTS</h4>
                 <p>{this.state.post.ingredients}</p>
                 <h4>RECIPE</h4>
                 <p>{this.state.post.recipe}</p>
               </div>
-            </div>
           </div>
           <div className={styles.row} >
             <Comments comments={this.state.comments}></Comments>

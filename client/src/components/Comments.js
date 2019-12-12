@@ -5,7 +5,7 @@ export default function Comments(props) {
 
     return (
         <div className={styles.addcom}>
-            <h2>Comments</h2>
+            <h3>Comments</h3>
             {props.comments.map(i => <div className={styles.comment} key={i.idcomments}>{i.username} : {i.comment}</div>)}
         </div>
 

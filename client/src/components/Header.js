@@ -25,7 +25,7 @@ export default class Header extends React.Component {
           </div>
           <div className={styles.topnav2}>
             <ul>
-              <img className={styles.logo} src={require('../header.png')} alt=''/>
+              <img className={styles.logo} src={require('../logo2.png')} alt=''/>
               <li><a href="#">Recipes</a></li>
               <li><Link to='/list'>Item</Link></li>
               <li><Link to='/post'>Post</Link></li>
@@ -48,14 +48,14 @@ export default class Header extends React.Component {
                     <input type="search" values={this.props.search} onChange={this.props.updateSearch} className={styles.search} placeholder="Search..." />
                   </div>
                 <div className={styles.login}>
-                    {this.props.userInfo.name}
-                    <button onClick={this.props.onLogOut}>Logout</button>
+                <Link to='/user'>{this.props.userInfo.name}</Link>
+                <Link to='/'><button onClick={this.props.onLogOut}>Logout</button></Link>
                 </div>
               </div>
             </div>
             <div className={styles.topnav2}>
               <ul>
-                <img className="logo" src={require('../header.png')} alt=''/>
+                <img className={styles.logo} src={require('../logo2.png')} alt=''/>
                 <li><a href="#">Recipe</a></li>
                 <li><Link to='/list'>Item</Link></li>
                 <li><Link to='/post'>Post</Link></li>

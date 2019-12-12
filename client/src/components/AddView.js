@@ -21,7 +21,7 @@ class AddView extends React.Component {
    data.append('file', this.uploadInput.files[0]);
    data.append('filename', this.uploadInput.files[0].name);
 
-   fetch('http://localhost:4000/upload', {
+   fetch('http://localhost:4000/image', {
      method: 'POST',
      body: data
    })
