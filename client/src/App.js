@@ -40,7 +40,7 @@ class App extends React.Component
     console.log("logout")
   }
   render()
-  {   
+  {
     return(
     <Router>
     <Header search={this.state.updateSearch} updateSearch={this.updateSearch} onLogOut={this.onLogOut} userInfo={this.state.userInfo} />

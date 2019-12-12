@@ -9,7 +9,7 @@ router.use(fileUpload());
 
 router.use('/public', express.static(global.__basedir + '/public'));
 
-router.post('/upload', (req, res, next) => {
+router.post('/', (req, res, next) => {
 	// console.log(req);
 	let imageFile = req.files.file;
 

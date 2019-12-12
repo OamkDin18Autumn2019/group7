@@ -23,7 +23,7 @@ class AddView extends React.Component {
    data.append('file', this.uploadInput.files[0]);
    data.append('filename', this.uploadInput.files[0].name);
 
-   fetch('http://localhost:4000/upload', {
+   fetch('http://localhost:4000/image', {
      method: 'POST',
      body: data
    })
@@ -36,6 +36,9 @@ class AddView extends React.Component {
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
     })
+    alert("Your post has been created")
+    const path='/';
+    this.props.history.push(path)
     }
 
 
@@ -48,7 +51,6 @@ class AddView extends React.Component {
     {
           console.log(this.state.imageURL)
       return (
-
 
    <div >
        <form   onSubmit={this.handleSubmit}>
@@ -79,9 +81,11 @@ class AddView extends React.Component {
 
          <div>
              <button type="submit">Submit</button>
+
          </div>
        </form>
   </div>
+
       )
     }
   }
