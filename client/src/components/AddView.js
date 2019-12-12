@@ -21,7 +21,7 @@ class AddView extends React.Component {
    data.append('file', this.uploadInput.files[0]);
    data.append('filename', this.uploadInput.files[0].name);
 
-   fetch('http://localhost:4000/upload', {
+   fetch('http://localhost:4000/image', {
      method: 'POST',
      body: data
    })
@@ -34,12 +34,15 @@ class AddView extends React.Component {
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
     })
+    alert("Your post has been created")
+    const path='/';
+    this.props.history.push(path)
     }
 
   }
   render() {
     const mystyle = {
-      overflow: "hidden", display:"inline-block"  , resize: "none", height: "160px" 
+      overflow: "hidden", display:"inline-block"  , resize: "none", height: "160px"
     };
     if(this.props.userInfo == null){
       alert("Must be login first")
