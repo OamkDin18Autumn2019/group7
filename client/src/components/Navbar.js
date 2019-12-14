@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import styles from './Navbar.module.css';
 class Navbar extends React.Component {
     
@@ -32,4 +32,4 @@ class Navbar extends React.Component {
     }
 }
 
-export default Navbar;
+export default Navbar;*/

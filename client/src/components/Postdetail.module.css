@@ -1,8 +1,4 @@
 
-.leftcolumn {
-    float: left;
-    width: 60%;
-}
 h2  {
     color: black;
     display:block;
@@ -15,6 +11,7 @@ h2  {
     margin-bottom: 4px;
     text-size-adjust: 100%;
     visibility: visible;
+    text-align: center;
 }
 h5 {
     color: black;
@@ -25,11 +22,14 @@ h5 {
     line-height: 22.8px;
     text-size-adjust: 100%;
     visibility: visible;
+    text-align: center;
+    margin-left:-20px;
 }
-img {
-    width: 100%;
+.img {
+    width: 60%;
     padding: 20px;
-    height: 500px;
+    height: 430px;
+    margin-left:130px;
 }
 
 .card {
@@ -45,15 +45,13 @@ img {
     display: table;
     clear: both;
 }
-
-@media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
-      width: 100%;
-      padding: 0;
-    }
-}
-
 .addcom {
     box-sizing: border-box;
     padding-left:20px;
+}
+.blog {
+    display:flex;
+    flex-direction: column;
+    max-width: 920px;
+    margin-left:250px;
 }
