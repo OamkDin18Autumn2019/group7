@@ -2,7 +2,7 @@
 h2  {
     color: black;
     display:block;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Lato,Open Sans ,Arial, Helvetica, sans-serif;
     font-size:28px;
     font-weight: 800;
     line-height: 33.6px;
@@ -11,25 +11,23 @@ h2  {
     margin-bottom: 4px;
     text-size-adjust: 100%;
     visibility: visible;
-    text-align: center;
 }
 h5 {
-    color: black;
+    color:black;
     display: block;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 22.8px;
     text-size-adjust: 100%;
     visibility: visible;
-    text-align: center;
-    margin-left:-20px;
+    margin-left:20px;
 }
 .img {
     width: 60%;
     padding: 20px;
     height: 430px;
-    margin-left:130px;
+    margin-left:10px;
 }
 
 .card {
@@ -38,12 +36,14 @@ h5 {
     border: 0px solid black;
     position: relative;
     box-sizing: border-box;
+    padding-top: 145px;
 }
 
 .row:after {
     content: "";
     display: table;
     clear: both;
+    max-width: 920px;
 }
 .addcom {
     box-sizing: border-box;
@@ -52,6 +52,6 @@ h5 {
 .blog {
     display:flex;
     flex-direction: column;
-    max-width: 920px;
-    margin-left:250px;
+    margin:auto;
+    width:80%;
 }

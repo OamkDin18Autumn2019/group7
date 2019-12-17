@@ -6,8 +6,8 @@ export default class Header extends React.Component {
   render(){
     if(this.props.userInfo == null){
       return(
-        <header>
-          <div>
+        <header className={styles.all} >
+          <div >
             <div className={styles.mainmenu}>
               <div className={styles.topnav}>
                 <div className={styles.home}>
@@ -36,7 +36,7 @@ export default class Header extends React.Component {
       )
     }else{
       return(
-        <header>
+        <header className={styles.all}>
           <div>
             <div className={styles.mainmenu} >
               <div className={styles.topnav}>

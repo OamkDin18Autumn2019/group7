@@ -746,4 +746,11 @@ a:hover, a:focus{
 .p {
   margin-top:-15px;
 }
- 
+.all {
+  display:block;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:100000;
+  width:100%;
+}

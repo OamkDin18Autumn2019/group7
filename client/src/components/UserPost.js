@@ -45,7 +45,7 @@ export default class PostList extends Component {
             }
             else {
                 return (
-                    
+            
                     <div className={styles.container}>
                         <h3>Your post</h3>
                         <table>

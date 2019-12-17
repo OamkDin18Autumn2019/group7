@@ -73,7 +73,8 @@
     border:none;
     margin:0px;
     padding:0px;
-    font-family:Courier, monospace;
+	font-family:Courier, monospace;
+	padding-top: 140px;
 }
 .button {
 	cursor:pointer;
