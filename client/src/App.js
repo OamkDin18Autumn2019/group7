@@ -28,6 +28,7 @@ class App extends React.Component
     this.setState({ isAuthenticated: false });
     console.log("Login failed");
     console.log(this.state.userInfo);
+    alert('Wrong username or password');
   }
   updateSearch = (event) =>{
     this.setState({search: event.target.value.substr(0,20)});
@@ -40,7 +41,7 @@ class App extends React.Component
     console.log("logout")
   }
   render()
-  {   
+  {
     return(
     <Router>
     <Header search={this.state.updateSearch} updateSearch={this.updateSearch} onLogOut={this.onLogOut} userInfo={this.state.userInfo} />

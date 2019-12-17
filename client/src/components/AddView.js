@@ -34,12 +34,15 @@ class AddView extends React.Component {
       ingredients : e.target['ingredients'].value,
       recipe : e.target['recipe'].value,
     })
+    alert("Your post has been created")
+    const path='/';
+    this.props.history.push(path)
     }
 
   }
   render() {
     const mystyle = {
-      overflow: "hidden", display:"inline-block"  , resize: "none", height: "160px" 
+      overflow: "hidden", display:"inline-block"  , resize: "none", height: "160px"
     };
     if(this.props.userInfo == null){
       alert("Must be login first")

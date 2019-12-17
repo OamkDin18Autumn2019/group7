@@ -31,31 +31,36 @@ export default class PostList extends Component {
             .catch(function (error) {
                 console.log(error);
             });
-    }
+        let deleted_array_of_post = this.state.post.filter(i => i.idposts != id);
+        console.log(deleted_array_of_post);
+        this.setState({post : deleted_array_of_post});    
+}
     render() {
         if (this.props.userInfo === null) {
             return (<React.Fragment><Redirect to='/login' /></React.Fragment>)
         }
         else {
-            if (this.props.post === null) {
+            if (this.state.post.length === 0) {
                 return <h2>You have no post</h2>
             }
             else {
                 return (
-                    <div className={styles.position}>
-                        <table className={styles.border}>
+            
+                    <div className={styles.container}>
+                        <h3>Your post</h3>
+                        <table>
                             <tr className={styles.border}>
-                                <td className={styles.border}>id</td>
-                                <td className={styles.border}>Post Name</td>
-                                <td className={styles.border}>Date</td>
-                                <td className={styles.border}>Delete</td>
+                                <th className={styles.border}>id</th>
+                                <th className={styles.border}>Post Name</th>
+                                <th className={styles.border}>Date</th>
+                                <th className={styles.border}>Delete</th>
                             </tr>
                             {this.state.post.map(i =>
                                 <tr className={styles.border}>
-                                    <td className={styles.border}>{i.idposts}</td>
-                                    <td className={styles.border}>{i.name}</td>
-                                    <td className={styles.border}>{i.date}</td>
-                                    <td className={styles.border}><button onClick={this.deletePost.bind(this, i.idposts)}>Delete</button></td>
+                                    <th className={styles.border}>{i.idposts}</th>
+                                    <th className={styles.border}>{i.name}</th>
+                                    <th className={styles.border}>{i.date}</th>
+                                    <th className={styles.border}><button onClick={this.deletePost.bind(this, i.idposts)}>Delete</button></th>
                                 </tr>)}
                         </table>
                     </div>
