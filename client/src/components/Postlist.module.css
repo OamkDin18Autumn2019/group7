@@ -4,8 +4,9 @@
     margin: auto;
     width : 70%;
     min-height: 1500px;
+    padding-top:140px;
+    
 }
-
 .img {
     max-width: 264px;
     max-height: 264px;

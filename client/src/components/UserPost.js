@@ -42,7 +42,7 @@ export default class PostList extends Component {
             }
             else {
                 return (
-                    <div>
+                    <div className={styles.position}>
                         <table className={styles.border}>
                             <tr className={styles.border}>
                                 <td className={styles.border}>id</td>
