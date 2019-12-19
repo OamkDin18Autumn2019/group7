@@ -8,6 +8,7 @@ export default function Comments(props) {
             <h3>Comments</h3>
             {props.comments.map(i => <div className={styles.comment} key={i.idcomments}>{i.username} : {i.comment}</div>)}
         </div>
+    
 
     );
 
